@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Head from "next/head";
 import { Container } from "postcss";
-// import styles from "../styles/Home.module.css"
+
+//import styles from "/src/app/global.css"
 
 // export default function Home() {
 //   return (
@@ -116,13 +117,30 @@ import { Container } from "postcss";
 // }
 
 export default function Home() {
-  return(
-    <body classname='flex w-full h-full'>
-      <main className="flex h-4/5 bg-gray-400">
-        <div id='left'>Hola</div>
-        <div id='right'>Que tal</div> 
-      </main>
-      <footer className="flex bg-white w-full h-1/5"></footer>
-    </body>
+  return (
+    <main className='flex w-screen h-screen font-sans flex-col overflow-y-auto'>
+      <div id="gray_container" className="flex flex-col lg:flex-row w-full h-screen bg-[#f0f2f5] justify-center">
+        <container id='banner' className='flex flex-col lg:w-2/6 lg:flex-col lg:items-start items-center justify-center'>
+          <div id="logo_image" className="flex content-box h-28 w-3/4 justify-center md:justify-start">
+            <img className='object-content h-full' src="https://static.xx.fbcdn.net/rsrc.php/y1/r/4lCu2zih0ca.svg" alt="Facebook"></img>
+          </div>
+          <div id="message" className="flex w-3/8 text-center h-25 lg:text-left ml-0 lg:ml-8">
+            <p className="text-2xl font-sans">Facebook te ayuda a comunicarte y compartir con las personas que forman parte de tu vida.</p>
+          </div>
+        </container>
+        <container id='all_forms' className="container flex flex-col lg:w-1/3 w-[40rem] p-8 justify-center">
+          <div className="container flex flex-col h-80 justify-center max-w-sm px-4 bg-white rounded-lg shadow-md gx-5 gap-y-4">
+            <input type="text" id="user" name="nombre" required placeholder="Email o usuario" className="container h-12 px-3 border-2 rounded shadow-1"></input>
+            <input type="password" id="password" name="nombre" required placeholder="Contraseña" className="container h-12 p-3 border-2 rounded shadow-1"></input>
+            <button type="submit" className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-800">Iniciar sesión</button>
+            <a href="#" class="text-center hover:underline-offset-1 text-blue-600 text-sm">¿Has olvidado la contraseña?</a>
+            <div className="container h-0 border-t-2 py-2">
+              <button type="submit" className="container w-full bg-green-400 hover:bg-green-600 py-2 px-4 rounded-md shadow-1 font-bold">Crear nueva cuenta</button>  
+            </div>
+          </div>
+        </container>
+      </div>
+      <footer id="white_container" className="flex bg-gray-600 w-full h-1/4">Footer</footer>
+    </main>
   )
 }

@@ -12,7 +12,10 @@ module.exports = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
-    },
+      colors: {
+        'bg-facebook-gray': 'rgb(240, 242, 245)',
+      }
+    }
   },
   plugins: [],
 };
